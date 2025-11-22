@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <body bgcolor=000000>
+        <form method="POST" style="font-size: 32px; display: flex; align-items: flex-start; gap: 20px;">
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+                <input type="text" name="question" placeholder="введите задачу>>>" style="font-size: 32px">
+                <input type="text" name="question2" placeholder="введите номер задачи>>>" style="font-size: 32px">
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+                <button type="submit" name="button_name" value="add" style="font-size: 32px; height: 50px;">
+                    Добавить
+                </button>
+                <button type="submit" name="button_name" value="remove" style="font-size: 32px; height: 50px;">
+                    Удалить
+                </button>
+            </div>
+        </form>
+
+        {%if response%}
+            <h2 style="color: white;">Ответ:</h2>
+            <div style="color: white;">{{response}}</div>
+        {% endif %}
+
+        {%if file_content%}
+            <h2 style="color: white; margin-top: 30px;">Содержимое файла:</h2>
+            <pre style="color: white; font-size: 20px;">{{file_content}}</pre>
+        {% endif %}
+    </body>
+</html>
